@@ -1,1 +1,37 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
 
+:root {
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 72%, 42%);
+    --vb-violet: hsl(259, 16%, 27%);
+    --vb-violet2: hsl(290, 70%, 36%);
+    --vb-yellow: hsl(51, 98%, 51%);
+    --pl-white: hsl(0, 0%, 100%);
+    --vb-cyan: hsl(132, 94%, 66%);
+    --vb-cyan2: hsl(64, 84%, 57%);
+    --dk-text: hsl(200, 5%, 11%);
+}
+
+body {
+    /* background-image: url('images/'); */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgb(10, 37, 134) 0%, rgb(18, 68, 194)100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+}
