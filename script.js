@@ -11,3 +11,13 @@ const indicator = document.querySelector("[data-indicator]");
 const generateBtn = document.querySelector(".generateButton");
 const allCheckBox = document.querySelectorAll("input[type=checkbox]");
 const symbols = '~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
+
+// Initially
+let password = "";
+let passwordLength = 10;
+let checkCount = 0;
+handleSlider();
+
+// Set strength circle color to grey
+setIndicator("#ccc")
+
