@@ -20,7 +20,7 @@ This web page is built using HTML, CSS & Javascript.
  # Usage
 
 1. Open the Password Generator in your web browser from the link -
-   git clone https://github.com/sidj01sar/Password-Generator.git
+   https://github.com/sidj01sar26/Password-Generator
 
 2. Choose the desired options for your password:
 
