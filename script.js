@@ -100,3 +100,101 @@ async function copyContent() {
     }, 2000);
 
 }
+
+function shufflePassword(array) {
+    // Fisher Yates Method
+    for (let i = array.length - 1; i > 0; i--) {
+        // Random j , find out using random function
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    let str = "";
+    array.forEach((el) => (str += el));
+    return str;
+}
+
+function handleCheckBoxChange() {
+    checkCount = 0;
+    allCheckBox.forEach((checkbox) => {
+        if (checkbox.checked)
+            checkCount++;
+    });
+
+    // Special condition
+    if (passwordLength < checkCount) {
+        passwordLength = checkCount;
+        handleSlider();
+    }
+}
+
+allCheckBox.forEach((checkbox) => {
+    checkbox.addEventListener('change', handleCheckBoxChange);
+})
+
+inputSlider.addEventListener('input', (e) => {
+    passwordLength = e.target.value;
+    handleSlider();
+})
+
+copyBtn.addEventListener('click', () => {
+    if (passwordDisplay.value)
+        copyContent();
+})
+
+generateBtn.addEventListener('click', () => {
+    // None of the checkbox are selected
+    if (checkCount == 0)
+        return;
+
+    if (passwordLength < checkCount) {
+        passwordLength = checkCount;
+        handleSlider();
+    }
+
+    // Let's start to find new password
+    console.log("Starting the Journey");
+
+    // Remove old password
+    password = "";
+
+    let funcArr = [];
+
+    if (uppercaseCheck.checked)
+        funcArr.push(generateUpperCase);
+
+    if (lowercaseCheck.checked)
+        funcArr.push(generateLowerCase);
+
+    if (numbersCheck.checked)
+        funcArr.push(generateRandomNumber);
+
+    if (symbolsCheck.checked)
+        funcArr.push(generateSymbol);
+
+    // Compulsory addition
+    for (let i = 0; i < funcArr.length; i++) {
+        password += funcArr[i]();
+    }
+    console.log("Compulsory addition done");
+
+    // Remaining addition
+    for (let i = 0; i < passwordLength - funcArr.length; i++) {
+        let randIndex = getRndInteger(0, funcArr.length);
+        console.log("randIndex" + randIndex);
+        password += funcArr[randIndex]();
+    }
+    console.log("Remaining addition done");
+
+    // Shuffle password
+    password = shufflePassword(Array.from(password));
+    console.log("Shuffling done");
+
+    // Show in UI
+    passwordDisplay.value = password;
+    console.log("UI adddition done");
+
+    // Calculate strength
+    calcStrength();
+});
