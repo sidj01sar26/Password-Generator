@@ -19,10 +19,10 @@ This web page is built using HTML, CSS & Javascript.
 
  # Usage
 
-1. Open the Password Generator in your web browser from the link -
-   https://github.com/sidj01sar26/Password-Generator
+1. Open the Password Generator in your web browser from the link
+<br> git clone - https://github.com/sidj01sar26/Password-Generator
 
-2. Choose the desired options for your password:
+3. Choose the desired options for your password:
 
    - Password Length: Specify the length of the password you want to generate.<br>
    - Include Uppercase Letters: Check this box if you want to include uppercase letters.<br>      
@@ -30,17 +30,17 @@ This web page is built using HTML, CSS & Javascript.
    - Include Numbers: Check this box if you want to include numbers.<br>
    - Include Special Characters: Check this box if you want to include special characters.<br>
    
-3. Click the "Generate Password" button.
+4. Click the "Generate Password" button.
 
-4. Your generated password will be displayed in the text box.
+5. Your generated password will be displayed in the text box.
 
-5. Click the "Copy to Clipboard" button to copy the generated password to your clipboard for easy use.
+6. Click the "Copy to Clipboard" button to copy the generated password to your clipboard for easy use.
 
 # Customization
 
 You have full control over the Password Generator:
 
-1. Length: Customize the password length using the slider (2 to 20 characters).
+1. Length: Customize the password length using the slider (1 to 20 characters).
 2. Character Types: Choose which character types to include or exclude:
 
    - Uppercase letters (A-Z)
